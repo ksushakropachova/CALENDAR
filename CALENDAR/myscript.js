@@ -9,6 +9,12 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 let calendarTitle = document.querySelector("#calendar_title");
 calendarTitle.append(monthNames[month]  + " " + year);
 
+let currentdate = document.querySelector(".currentdate" );
+currentdate.append( day + " "+ monthNames[month] + " "+ year);
+
+const firstDateOfMonth = new Date(date);
+firstDateOfMonth.setDate(1);
+
 
 
 
