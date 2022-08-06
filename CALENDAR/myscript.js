@@ -4,6 +4,13 @@ let year = date.getFullYear();
 let month = date.getMonth();
 let monthDays = document.querySelector(".calendar_days");
 let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate(); 
+let days = "";
+let firstDayIndex = date.getDay();
+let prevLastDate = new Date(date.getFullYear(), date.getMonth(), 0).getDate(); 
+let lastDayIndex = new Date(date.getFullYear(),date.getMonth() + 1, 0).getDay();
+
+const nextDays = 7 - lastDayIndex + 1;
+
 
 date.setDate(1);
 
@@ -16,14 +23,22 @@ calendarTitle.append(monthNames[month]  + " " + year);
 let currentdate = document.querySelector(".currentdate" );
 currentdate.append( day + " "+ monthNames[month] + " "+ year);
 
-let days = "";
+for (let x = firstDayIndex; x > 0; x--){
+  days += `<div class="prev-date">${prevLastDate - x + 1}</div>`
+}
 
 for (let i = 1; i <= lastDay; i++){
-  days += `<div>${i}</div>`;
-  monthDays.innerHTML = days;
+  if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+    days += `<div class="today">${i}</div>`;
+  } else {
+    days += `<div>${i}</div>`;
+  }
 };
 
-console.log(lastDay)
+for (let j = 1; j <= nextDays; j++){
+  days += `<div class="nextdate">${j}</div>`;
+  monthDays.innerHTML = days;
+}
 
 
 

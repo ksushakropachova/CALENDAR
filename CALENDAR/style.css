@@ -293,4 +293,6 @@ aside{
     border-radius:12px;
 }
 
-
+.today {
+    color: #FF467E;
+}
