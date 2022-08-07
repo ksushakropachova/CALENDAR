@@ -157,12 +157,12 @@ aside{
     border-bottom: 1px solid #979797;
 }
 
-.calendar_btn{
+/* .calendar_btn{
     width: 18px;
     height: 36px;
     background: none;
     border-style: none;
-}
+} */
 
 .calendar_day{
     font-family: 'Roboto';
@@ -293,4 +293,6 @@ aside{
     border-radius:12px;
 }
 
-
+.today {
+    color: #FF467E;
+}
